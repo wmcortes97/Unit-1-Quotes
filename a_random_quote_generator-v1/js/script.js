@@ -68,19 +68,20 @@ getRandomQuote(); //returns one random entire object
 ***/
 
 let randomQuote; //new variable name for single object containing values. 
-
+let HTML;
 
 function printQuote () {
 
   randomQuote = getRandomQuote();
 
 for (prop in randomQuote) {
-  console.log(randomQuote.quote);
+  HTML += `<p class="quote"> ${randomQuote.quote} </p><p class="source"> ${randomQuote.source}`;   //returning HTML
+
+  
 
 }
 
 }
-
 
 
 
