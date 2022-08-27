@@ -10,7 +10,43 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+let quotes = [
+ {
+  quote: "I'll get you, my pretty, and your little dog, too!",
+  source: "Wicked Witch of the West",
+  citation: 'The Wizard of Oz',
+  year: 1939
+ },
+ {
+  quote: "Nobody puts Baby in a corner.",
+  source: "Patrick Swayze",
+  citation: "Dirty Dancing",
+  year: 1987
+ },
+ {
+  quote: "You talking to me?",
+  source: "Travis Bickle",
+  citation: "Taxi Driver",
+  year: 1976
+ },
+ {
+  quote: "E.T. phone home.",
+  source: "E.T",
+  citation: "E.T. The Extra-Terrestrial",
+  year: 1982
+ },
+ {
+  quote: "I see dead people.",
+  source: "kid",
+  citation: "The Sixth Sense",
+  year: 1999
 
+ },
+
+
+
+
+];
 
 
 /***
