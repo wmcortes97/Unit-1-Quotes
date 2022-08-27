@@ -56,7 +56,7 @@ let quotes = [
 ***/
 
 function getRandomQuote () {
-  let randomNumber = quotes[Math.floor(Math.random() * quotes.length) + 1]; //use quote.length to be able to use this function while still adding more objects. 
+  let randomNumber = quotes[Math.floor(Math.random() * quotes.length)]; //use quote.length to be able to use this function while still adding more objects. 
   return randomNumber
 
 }
