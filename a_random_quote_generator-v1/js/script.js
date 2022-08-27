@@ -20,26 +20,26 @@ let quotes = [
  {
   quote: "Nobody puts Baby in a corner.",
   source: "Patrick Swayze",
-  citation: "Dirty Dancing",
+ // citation: "Dirty Dancing",
   year: 1987
  },
  {
   quote: "You talking to me?",
   source: "Travis Bickle",
-  citation: "Taxi Driver",
+  //citation: "Taxi Driver",
   year: 1976
  },
  {
   quote: "E.T. phone home.",
   source: "E.T",
   citation: "E.T. The Extra-Terrestrial",
-  year: 1982
+  //year: 1982
  },
  {
   quote: "I see dead people.",
   source: "kid",
   citation: "The Sixth Sense",
-  year: 1999
+  //year: 1999
 
  },
 
@@ -61,29 +61,48 @@ function getRandomQuote () {
 
 }
 
-getRandomQuote();
+getRandomQuote(); //returns one random entire object
+
 /***
  * `printQuote` function
 ***/
 
+let randomQuote; //new variable name for single object containing values. 
+
+
 function printQuote () {
 
-  let randomQuote = getRandomQuote();
-  let HTML = `<p class="quote"> ${quotes.quote} </p><p class="source"> quote source`;
+  randomQuote = getRandomQuote();
 
-  if (quotes.includes('citation')) {
-    HTML += `<span class="citation"> ${quotes.citation}</span>`;
+for (prop in randomQuote) {
+  console.log(randomQuote.quote);
 
-  }
-
-  if (quotes.includes('year')) {
-    HTML += `<span class="year"> ${quotes.year}</span>`;
-
-  }
-    HTML += `</p>`;
 }
 
-console.log(printQuote());
+}
+
+
+
+
+
+// function printQuote () {
+
+//   randomQuote = getRandomQuote(); //quotes[i], returns one object that is the same?
+//   let HTML = `<p class="quote"> ${randomQuote.quote} </p><p class="source"> ${randomQuote.source}`;
+
+//   if (randomQuote.includes('citation')) {
+//     HTML += `<span class="citation"> ${randomQuote.citation}</span>`;
+
+//   }
+
+//   if (randomQuote.includes('year')) {
+//     HTML += `<span class="year"> ${randomQuote.year}</span>`;
+
+//   }
+//     HTML += `</p>`;
+// }
+
+// console.log(printQuote());
 
 /***
  * click event listener for the print quote button
