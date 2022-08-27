@@ -56,16 +56,34 @@ let quotes = [
 ***/
 
 function getRandomQuote () {
-  let randomNumber = Math.floor(Math.random() * quotes.length) + 1;
+  let randomNumber = quotes[Math.floor(Math.random() * quotes.length) + 1]; //use quote.length to be able to use this function while still adding more objects. 
   return randomNumber
 
 }
 
+getRandomQuote();
 /***
  * `printQuote` function
 ***/
 
+function printQuote () {
 
+  let randomQuote = getRandomQuote();
+  let HTML = `<p class="quote"> ${quotes.quote} </p><p class="source"> quote source`;
+
+  if (quotes.includes('citation')) {
+    HTML += `<span class="citation"> ${quotes.citation}</span>`;
+
+  }
+
+  if (quotes.includes('year')) {
+    HTML += `<span class="year"> ${quotes.year}</span>`;
+
+  }
+    HTML += `</p>`;
+}
+
+console.log(printQuote());
 
 /***
  * click event listener for the print quote button
