@@ -67,21 +67,36 @@ getRandomQuote(); //returns one random entire object
  * `printQuote` function
 ***/
 
-let randomQuote; //new variable name for single object containing values. 
-let HTML;
+; //new variable name for single object containing values. 
+
 
 function printQuote () {
+  let html='';
+  let randomQuote = getRandomQuote();
 
-  randomQuote = getRandomQuote();
 
-for (prop in randomQuote) {
-  HTML += `<p class="quote"> ${randomQuote.quote} </p><p class="source"> ${randomQuote.source}`;   //returning HTML
+  html += `<p class="quote"> ${randomQuote.quote} </p><p class="source"> ${randomQuote.source}`;   //returning html
 
-  
+  if (randomQuote.citation) {
+       html += `<span class="citation"> ${randomQuote.citation}</span>`;
+    
+       }
+    
+   if (randomQuote.year) {
+         html += `<span class="year"> ${randomQuote.year}</span>`;
+    
+       }
+  html += `</p>`;
 
-}
+  document.getElementById('quote-box').innerHTML = html;  
+   }
 
-}
+   printQuote();
+   
+
+
+
+
 
 
 
