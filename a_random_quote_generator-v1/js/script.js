@@ -9,6 +9,7 @@ project 1 - A Random Quote Generator
 
 /*** 
  * `quotes` array 
+ * I created the value quotes that contain 5 objects, each with up to 4 values: quote, source, citation, and year.  
 ***/
 let quotes = [
  {
@@ -37,9 +38,10 @@ let quotes = [
  },
  {
   quote: "I see dead people.",
-  source: "kid",
+  source: "Cole Sear",
   citation: "The Sixth Sense",
   //year: 1999
+  tags: "Horror/ Thriller"
 
  },
 
@@ -53,21 +55,24 @@ let quotes = [
 
 /***
  * `getRandomQuote` function
+ * The getRandomQuote function will generate a random object within the quotes array. 
 ***/
 
 function getRandomQuote () {
-  let randomNumber = quotes[Math.floor(Math.random() * quotes.length)]; //use quote.length to be able to use this function while still adding more objects. 
+  let randomNumber = quotes[Math.floor(Math.random() * quotes.length)]; 
   return randomNumber
 
 }
 
-getRandomQuote(); //returns one random entire object
+getRandomQuote(); 
 
 /***
  * `printQuote` function
+ * The printQuote function will print a random quote, its source, along with its citation and year if provided within the random object. 
+ * When called, this function will display the object values with styling due to the embedded HTML. 
 ***/
 
-; //new variable name for single object containing values. 
+
 
 
 function printQuote () {
@@ -82,43 +87,22 @@ function printQuote () {
     
        }
     
-   if (randomQuote.year) {
+  if (randomQuote.year) {
          html += `<span class="year"> ${randomQuote.year}</span>`;
     
        }
+
+  if (randomQuote.tags) {
+        html += `<span class="tags"> ${randomQuote.tags}</span>`;
+   
+      }
   html += `</p>`;
 
   document.getElementById('quote-box').innerHTML = html;  
    }
 
    printQuote();
-   
 
-
-
-
-
-
-
-
-// function printQuote () {
-
-//   randomQuote = getRandomQuote(); //quotes[i], returns one object that is the same?
-//   let HTML = `<p class="quote"> ${randomQuote.quote} </p><p class="source"> ${randomQuote.source}`;
-
-//   if (randomQuote.includes('citation')) {
-//     HTML += `<span class="citation"> ${randomQuote.citation}</span>`;
-
-//   }
-
-//   if (randomQuote.includes('year')) {
-//     HTML += `<span class="year"> ${randomQuote.year}</span>`;
-
-//   }
-//     HTML += `</p>`;
-// }
-
-// console.log(printQuote());
 
 /***
  * click event listener for the print quote button
