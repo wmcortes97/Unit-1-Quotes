@@ -59,7 +59,7 @@ let quotes = [
 ***/
 
 function getRandomQuote () {
-  let randomNumber = quotes[Math.floor(Math.random() * quotes.length)]; 
+  let randomNumber = quotes[Math.floor(Math.random() * quotes.length)]; //attributed to treehouse 
   return randomNumber
 
 }
@@ -99,9 +99,30 @@ function printQuote () {
   html += `</p>`;
 
   document.getElementById('quote-box').innerHTML = html;  
+
    }
 
    printQuote();
+
+   function randomColor () {
+    let randomValue = Math.floor(Math.random() * 256);
+    return randomValue;
+  }
+  
+  /////create a random color 
+  
+  let randomRGB;
+  
+  for (let i = 1; i <=10; i++) {
+  
+  
+  randomRGB = `rgb( ${randomColor()}, ${randomColor()}, ${randomColor()} )`;
+  
+  }
+  
+  
+  document.body.style.backgroundColor = randomRGB; 
+  
 
 
 /***
