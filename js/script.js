@@ -3,146 +3,126 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+// For assistance:
+// Check the "Project Resources" section of the project instructions
+// Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
-/*** 
- * `quotes` array 
- * I created the value quotes that contain 5 objects, each with up to 4 values: quote, source, citation, and year.  
+/***
+ * `quotes` array
+ * I created the value quotes that contain 5 objects, each with up to 4 values: quote, source, citation, and year.
  * However, not all objects contain all 4 properties.
-***/
+ ***/
 let quotes = [
- {
-  quote: "I'll get you, my pretty, and your little dog, too!",
-  source: "Wicked Witch of the West",
-  citation: 'The Wizard of Oz',
-  year: 1939
- },
- {
-  quote: "Nobody puts Baby in a corner.",
-  source: "Patrick Swayze",
- // citation: "Dirty Dancing",
-  year: 1987
- },
- {
-  quote: "You talking to me?",
-  source: "Travis Bickle",
-  //citation: "Taxi Driver",
-  year: 1976
- },
- {
-  quote: "E.T. phone home.",
-  source: "E.T",
-  citation: "E.T. The Extra-Terrestrial",
-  //year: 1982
- },
- {
-  quote: "I see dead people.",
-  source: "Cole Sear",
-  citation: "The Sixth Sense",
-  //year: 1999
-  tags: "Horror/ Thriller"
-
- },
-
-
-
-
+  {
+    quote: "I'll get you, my pretty, and your little dog, too!",
+    source: "Wicked Witch of the West",
+    citation: "The Wizard of Oz",
+    year: 1939,
+  },
+  {
+    quote: "Nobody puts Baby in a corner.",
+    source: "Patrick Swayze",
+    // citation: "Dirty Dancing",
+    year: 1987,
+  },
+  {
+    quote: "You talking to me?",
+    source: "Travis Bickle",
+    //citation: "Taxi Driver",
+    year: 1976,
+  },
+  {
+    quote: "E.T. phone home.",
+    source: "E.T",
+    citation: "E.T. The Extra-Terrestrial",
+    //year: 1982
+  },
+  {
+    quote: "I see dead people.",
+    source: "Cole Sear",
+    citation: "The Sixth Sense",
+    //year: 1999
+    tags: "Horror/ Thriller",
+  },
 ];
-
-
-
 
 /***
  * `getRandomQuote` function
- * The getRandomQuote function will generate a random object within the quotes array. 
+ * The getRandomQuote function will generate a random object within the quotes array.
  * The randomNumber variable uses a math function that generated a random number between 0 and the number of objects that are in the array.
- * In this case, it would be a number from 0 to 5. This number will represent the index value of each object. 
-***/
+ * In this case, it would be a number from 0 to 5. This number will represent the index value of each object.
+ ***/
 
-function getRandomQuote () {
-  let randomNumber = quotes[Math.floor(Math.random() * quotes.length)]; //attributed to treehouse 
-  return randomNumber
-
+function getRandomQuote() {
+  let randomNumber = quotes[Math.floor(Math.random() * quotes.length)]; //attributed to treehouse
+  return randomNumber;
 }
 
-getRandomQuote(); 
+getRandomQuote();
 
 /***
  * `printQuote` function
- * The printQuote function will print a random quote, its source, along with its citation and year if provided within the random object. 
- * The first addition of HTML will include both quote and source since all objects contain it. 
+ * The printQuote function will print a random quote, its source, along with its citation and year if provided within the random object.
+ * The first addition of HTML will include both quote and source since all objects contain it.
  * Note that there are two if statements instead of a if-else statement. This is because we want the function to run those two if statemenets regardless of what the first if statement says.
- * In other words, we want the function to check if each object has a citation property, year property, AND tag property. 
- * When called, this function will display the object values with styling due to the embedded HTML. 
-***/
+ * In other words, we want the function to check if each object has a citation property, year property, AND tag property.
+ * When called, this function will display the object values with styling due to the embedded HTML.
+ ***/
 
-
-
-function printQuote () {
-  let html='';
+function printQuote() {
+  let html = "";
   let randomQuote = getRandomQuote();
 
-
-  html += `<p class="quote"> ${randomQuote.quote} </p><p class="source"> ${randomQuote.source}`;   //using dot notation to target the value within the specific object that is stored in randomQuote.
+  html += `<p class="quote"> ${randomQuote.quote} </p><p class="source"> ${randomQuote.source}`; //using dot notation to target the value within the specific object that is stored in randomQuote.
 
   if (randomQuote.citation) {
-       html += `<span class="citation"> ${randomQuote.citation}</span>`;
-    
-       }
-    
+    html += `<span class="citation"> ${randomQuote.citation}</span>`;
+  }
+
   if (randomQuote.year) {
-         html += `<span class="year"> ${randomQuote.year}</span>`;
-    
-       }
+    html += `<span class="year"> ${randomQuote.year}</span>`;
+  }
 
   if (randomQuote.tags) {
-        html += `<span class="tags"> ${randomQuote.tags}</span>`;
-   
-      }
+    html += `<span class="tags"> ${randomQuote.tags}</span>`;
+  }
   html += `</p>`;
 
-  document.getElementById('quote-box').innerHTML = html;  //targeting the tag that contains the 'quote-box' id and replacing the html that was inside of it. 
+  document.getElementById("quote-box").innerHTML = html; //targeting the tag that contains the 'quote-box' id and replacing the html that was inside of it.
+}
 
-   }
+printQuote();
 
-   printQuote();
+/***
+ * `randomColor` function
+ * This function outputs a random value between 0 and 256 which are the minimum and maximum values that can be used in rgb(x,y,z).
+ *This function is only outputting ONE random number.
+ ***/
 
-   /***  
-    * `randomColor` function
-    * This function outputs a random value between 0 and 256 which are the minimum and maximum values that can be used in rgb(x,y,z).
-    *This function is only outputting ONE random number.  
-   ***/
+function randomColor() {
+  let randomValue = Math.floor(Math.random() * 256);
+  return randomValue;
+}
 
-   function randomColor () {
-    let randomValue = Math.floor(Math.random() * 256);
-    return randomValue;
-  }
-  
-/* Creating a rgb value 
-  *In this clock of code, I am using threee ranbdom numbers generated by the randomColor function and inserting them in the variable randomRGB which should return rgb(x,y,z).
+/* Creating a rgb value
+ *In this clock of code, I am using threee ranbdom numbers generated by the randomColor function and inserting them in the variable randomRGB which should return rgb(x,y,z).
  */
-  
-  let randomRGB;
-  
-  for (let i = 1; i <=10; i++) {
-  
-  
+
+let randomRGB;
+
+for (let i = 1; i <= 10; i++) {
   randomRGB = `rgb( ${randomColor()}, ${randomColor()}, ${randomColor()} )`;
-  
-  }
+}
 
 /*** 
  *`refreshColor` function
  *In this function, I stored the code that would target the background color in CSS. I set the value in backgroundColor to the random RGB value stored in randomRGB. 
 
 ***/
-  
-function refreshColor () {
-  document.body.style.backgroundColor = randomRGB; 
 
-};
+function refreshColor() {
+  document.body.style.backgroundColor = randomRGB;
+}
 
 refreshColor();
 
@@ -153,10 +133,16 @@ I also just inserted 'refreshColor' in the last line of code following 'printQuo
 
 //document.getElementById('load-quote').addEventListener("click", refreshColor);
 
-
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
-***/
+ ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document
+  .getElementById("load-quote")
+  .addEventListener("click", printQuote, false);
+
+let body = document.querySelector("body");
+document.getElementById("load-quote").addEventListener("click", () => {
+  body.style.backgroundColor = randomRGB;
+});
