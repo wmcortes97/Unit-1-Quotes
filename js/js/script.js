@@ -146,8 +146,12 @@ function refreshColor () {
 
 refreshColor();
 
+/*
+I thought the code below would let function refreshColor run every time the 'show another quote' button was clicked but it did not work. I would appreciate any feedback on this! Thank you. 
+I also just inserted 'refreshColor' in the last line of code following 'printQuote' but did not work either. 
+*/
 
-document.getElementById('load-quote').addEventListener("click", refreshColor, false);
+//document.getElementById('load-quote').addEventListener("click", refreshColor);
 
 
 /***
